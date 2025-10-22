@@ -1,0 +1,142 @@
+/* 🌟 Q-Tech Christmas Raffle Styles */
+/* Author: Baby & ChatGPT 😚 */
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  color: white;
+  overflow-x: hidden;
+  min-height: 100vh;
+  position: relative;
+  background: url("img/bg.png") repeat;
+  background-size: cover;
+  animation: moveBg 30s linear infinite;
+}
+
+/* ❄️ Moving background animation */
+@keyframes moveBg {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 1000px;
+  }
+}
+
+header {
+  text-align: center;
+  padding: 20px 0;
+  position: relative;
+  z-index: 2;
+}
+
+header img {
+  height: 80px;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+header h1 {
+  color: #ffcc00;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+/* 🎰 Raffle Draw Section */
+.draw-section {
+  text-align: center;
+  margin: 40px auto 20px;
+  z-index: 2;
+  position: relative;
+  transform: scale(1.2);
+}
+
+button {
+  background-color: #ffcc00;
+  color: #003366;
+  border: none;
+  padding: 14px 30px;
+  font-size: 1.2em;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #ffee58;
+  transform: scale(1.1);
+}
+
+#current-winner {
+  margin-top: 20px;
+  font-size: 2.5em;
+  color: #ffffff;
+  text-shadow: 0 0 10px #ffcc00;
+  font-weight: bold;
+}
+
+/* 🎁 Participants and Prizes */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 60px;
+  padding: 20px;
+  transform: scale(1.15);
+}
+
+.column {
+  width: 38%;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+h2 {
+  text-align: center;
+  color: #ffcc00;
+  margin-bottom: 10px;
+  text-shadow: 0 0 5px #ffffff;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 10px;
+  margin-bottom: 6px;
+  border-radius: 8px;
+  text-align: center;
+  color: #fff;
+}
+
+/* 🏆 Winners Section */
+.winners-section {
+  text-align: center;
+  margin-top: 40px;
+  z-index: 2;
+  position: relative;
+}
+
+#winners-list li {
+  background: rgba(255, 204, 0, 0.3);
+  margin: 5px auto;
+  padding: 10px;
+  width: 200px;
+  border-radius: 10px;
+}
+
+/* 🎄 Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  color: #ccc;
+  font-size: 0.9em;
+  z-index: 2;
+  position: relative;
+}

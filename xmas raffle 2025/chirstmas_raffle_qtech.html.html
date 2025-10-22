@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Q-Tech Testing Laboratory Christmas Raffle</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background: url('./img/bg.png') repeat center center fixed;
+      background-size: cover;
+      color: white;
+      overflow-x: hidden;
+      min-height: 100vh;
+      position: relative;
+      animation: moveBg 30s linear infinite;
+    }
+
+    @keyframes moveBg {
+      from { background-position: 0 0; }
+      to { background-position: 0 1000px; }
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 40, 0.55);
+      z-index: 0;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    header img {
+      height: 80px;
+      display: block;
+      margin: 0 auto 10px;
+    }
+
+    header h1 {
+      color: #ffcc00;
+      text-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+    }
+
+    /* 🎁 Center Focus Section */
+    .draw-section {
+      text-align: center;
+      margin: 40px auto;
+      z-index: 2;
+      position: relative;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 20px;
+      padding: 60px 30px;
+      width: 60%;
+      box-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(6px);
+    }
+
+    button {
+      background-color: #ffcc00;
+      color: #003366;
+      border: none;
+      padding: 18px 40px;
+      font-size: 1.5em;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-weight: bold;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    }
+
+    button:hover {
+      background-color: #ffee58;
+      transform: scale(1.08);
+    }
+
+    #current-winner {
+      margin-top: 30px;
+      font-size: 3em;
+      color: #ffffff;
+      text-shadow: 0 0 20px #ffcc00;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-start;
+      padding: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .column {
+      width: 40%;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 15px;
+      padding: 15px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    }
+
+    h2 {
+      text-align: center;
+      color: #ffcc00;
+      margin-bottom: 10px;
+      text-shadow: 0 0 5px rgba(0,0,0,0.6);
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    ul li {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 8px;
+      margin-bottom: 5px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .winners-section {
+      text-align: center;
+      margin-top: 40px;
+      z-index: 1;
+      position: relative;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #ccc;
+      font-size: 0.9em;
+      z-index: 1;
+      position: relative;
+    }
+
+    /* ❄️ Snowflakes */
+    .snowflake {
+      position: fixed;
+      top: -10px;
+      color: white;
+      font-size: 1em;
+      user-select: none;
+      pointer-events: none;
+      animation: fall linear infinite;
+      z-index: 9999;
+      opacity: 0.8;
+      text-shadow: 0 0 10px #fff;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0.5;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <img src="img/qtechlogo.png" alt="Q-Tech Logo" />
+    <h1>Q-Tech Testing Laboratory Christmas Raffle</h1>
+  </header>
+
+  <div class="draw-section">
+    <button id="drawBtn">🎰 Draw Winner</button>
+    <div id="current-winner">No winner yet</div>
+  </div>
+
+  <div class="container">
+    <div class="column">
+      <h2>Participants</h2>
+      <ul id="participants-list">
+        <li>rci</li><li>jgj</li><li>clb</li><li>jlg</li><li>mjdg</li><li>ape</li>
+        <li>mfa</li><li>dbs</li><li>cbp</li><li>red</li><li>wtl</li><li>mip</li><li>pacu</li><li>nbg</li>
+      </ul>
+    </div>
+
+    <div class="column">
+      <h2>Prizes</h2>
+      <ul>
+        <li contenteditable="true">Prize 1</li>
+        <li contenteditable="true">Prize 2</li>
+        <li contenteditable="true">Prize 3</li>
+        <li contenteditable="true">Prize 4</li>
+        <li contenteditable="true">Prize 5</li>
+        <li contenteditable="true">Prize 6</li>
+        <li contenteditable="true">Prize 7</li>
+        <li contenteditable="true">Prize 8</li>
+        <li contenteditable="true">Prize 9</li>
+        <li contenteditable="true">Prize 10</li>
+        <li contenteditable="true">Prize 11</li>
+        <li contenteditable="true">Prize 12</li>
+        <li contenteditable="true">Prize 13</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="winners-section">
+    <h2>List of Winners</h2>
+    <ul id="winners-list"></ul>
+  </div>
+
+  <footer></footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script src="script.js"></script>
+
+  <script>
+    function createSnowflake() {
+      const snowflake = document.createElement('div');
+      snowflake.classList.add('snowflake');
+      snowflake.textContent = '❆';
+      snowflake.style.left = Math.random() * window.innerWidth + 'px';
+      snowflake.style.fontSize = (Math.random() * 10 + 10) + 'px';
+      snowflake.style.animationDuration = (Math.random() * 5 + 5) + 's';
+      snowflake.style.opacity = Math.random();
+      document.body.appendChild(snowflake);
+
+      setTimeout(() => snowflake.remove(), 10000);
+    }
+
+    setInterval(createSnowflake, 150);
+  </script>
+</body>
+</html>
